@@ -11,10 +11,11 @@ Sidebar.Properties = function ( editor ) {
 	var objectTab = new UI.Text( 'OBJECT' ).onClick( onClick );
 	var geometryTab = new UI.Text( 'GEOMETRY' ).onClick( onClick );
 	var materialTab = new UI.Text( 'MATERIAL' ).onClick( onClick );
+	var behaviourTab = new UI.Text( 'BEHAVIOUR' ).onClick( onClick );
 
 	var tabs = new UI.Div();
 	tabs.setId( 'tabs' );
-	tabs.add( objectTab, geometryTab, materialTab );
+	tabs.add( objectTab, geometryTab, materialTab, behaviourTab );
 	container.add( tabs );
 
 	function onClick( event ) {
@@ -40,6 +41,11 @@ Sidebar.Properties = function ( editor ) {
 	);
 	container.add( material );
 
+	var behaviour = new UI.Span().add(
+		new Sidebar.Behaviour( editor )
+	);
+	container.add( behaviour );
+
 	//
 
 	function select( section ) {
@@ -47,10 +53,12 @@ Sidebar.Properties = function ( editor ) {
 		objectTab.setClass( '' );
 		geometryTab.setClass( '' );
 		materialTab.setClass( '' );
+		behaviourTab.setClass( '' );
 
 		object.setDisplay( 'none' );
 		geometry.setDisplay( 'none' );
 		material.setDisplay( 'none' );
+		behaviour.setDisplay( 'none' );
 
 		switch ( section ) {
 			case 'OBJECT':
@@ -65,6 +73,9 @@ Sidebar.Properties = function ( editor ) {
 				materialTab.setClass( 'selected' );
 				material.setDisplay( '' );
 				break;
+			case 'BEHAVIOUR':
+				behaviourTab.setClass( 'selected' );
+				behaviour.setDisplay( '' );
 		}
 
 	}
