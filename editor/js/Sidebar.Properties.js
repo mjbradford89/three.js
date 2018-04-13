@@ -76,6 +76,7 @@ Sidebar.Properties = function ( editor ) {
 			case 'BEHAVIOUR':
 				behaviourTab.setClass( 'selected' );
 				behaviour.setDisplay( '' );
+				break;
 		}
 
 	}
