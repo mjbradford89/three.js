@@ -107,6 +107,15 @@ Sidebar.Behaviour = function ( editor ) {
 	signals.objectSelected.add( function ( object ) {
         currentObject = object;
         resetUI();
+        if (currentObject && currentObject.animations) {
+            let options = {};
+            currentObject.animations.forEach((animation) => {
+                animation.tracks.forEach((track) => {
+                    options[track.name] = track.name;
+                });
+            });
+            selectAnimation.setOptions(options);
+        }
     });
 
 	return container;
