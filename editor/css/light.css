@@ -147,12 +147,29 @@ select {
 			margin: 0 !important;
 		}
 
+#animation-panel {
+
+}
+
+	.animation-row {
+		width: 100%;
+		padding-bottom: 10px;
+	}
+
+	.animation-row:hover {
+		background-color: #dddddd;
+	}
+
+	.animation-row button {
+		float: right;
+	}
+
 #sidebar {
 	position: absolute;
 	right: 0;
 	top: 32px;
 	bottom: 0;
-	width: 300px;
+	width: 400px;
 	background: #eee;
 	overflow: auto;
 }
@@ -174,6 +191,42 @@ select {
 	#sidebar .Row {
 		min-height: 20px;
 		margin-bottom: 10px;
+	}
+
+#behaviour-panel {
+
+}
+
+	#behaviour-panel .behaviour-element {
+		text-align: center;
+		height: 20px;
+	}
+
+	#behaviour-panel .behaviour-element > * {
+		color: white;
+		width: 40%;
+		float: left;
+	}
+
+	#behaviour-panel .behaviour-element > .arrow {
+		width: 5%;
+		color: black;
+		font-weight: bold;
+	}
+
+	#behaviour-panel .behaviour-element > .remove {
+		width: 5%;
+		color: black;
+		font-weight: bold;
+		cursor: pointer;
+	}
+
+	#behaviour-panel .behaviour-element > .trigger-element {
+		background-color: #e66464;
+	}
+
+	#behaviour-panel .behaviour-element > .action-element {
+		background-color:#94944f;
 	}
 
 #tabs {

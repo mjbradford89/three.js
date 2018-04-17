@@ -6,6 +6,7 @@ import { Euler } from '../math/Euler.js';
 import { Layers } from './Layers.js';
 import { Matrix3 } from '../math/Matrix3.js';
 import { _Math } from '../math/Math.js';
+import { AnimationClip } from '../animation/AnimationClip.js';
 
 /**
  * @author mrdoob / http://mrdoob.com/
@@ -739,6 +740,16 @@ Object3D.prototype = Object.assign( Object.create( EventDispatcher.prototype ), 
 
 			}
 
+		}
+
+		if (this.animations && this.animations.length > 0) {
+			object.animations = [];
+
+			for ( var i = 0; i < this.animations.length; i ++ ) {
+
+				object.animations.push( AnimationClip.toJSON( this.animations[i] ) );
+
+			}
 		}
 
 		if ( isRootObject ) {
